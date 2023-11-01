@@ -30,7 +30,6 @@ export default {
   feedback: '反馈与建议',
   historyRange: '历史范围',
   import: '导入配置',
-
   lang: {
     'en': '英语',
     'en-US': '英语',
@@ -52,7 +51,6 @@ export default {
   reset: '重置',
   retry: '重试',
   send: '发送',
-  sessionList: '助手列表',
   setting: '设置',
   share: '分享',
   stop: '停止',
@@ -62,7 +60,6 @@ export default {
     setting: '设置',
   },
   temp: '临时',
-
   updateAgent: '更新助理信息',
   upgradeVersion: {
     action: '立即升级',

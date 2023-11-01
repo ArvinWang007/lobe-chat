@@ -2,6 +2,232 @@
 
 # Changelog
 
+### [Version 0.96.8](https://github.com/lobehub/lobe-chat/compare/v0.96.7...v0.96.8)
+
+<sup>Released on **2023-10-31**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: Fix a bug that weather plugin is not work correctly, template remove sharp deps.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: Fix a bug that weather plugin is not work correctly ([dbb65ff](https://github.com/lobehub/lobe-chat/commit/dbb65ff))
+- **misc**: Template remove sharp deps ([380723d](https://github.com/lobehub/lobe-chat/commit/380723d))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version 0.96.7](https://github.com/lobehub/lobe-chat/compare/v0.96.6...v0.96.7)
+
+<sup>Released on **2023-10-31**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: Fix a bug when click inbox not switch back to chat page.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: Fix a bug when click inbox not switch back to chat page ([31f6d29](https://github.com/lobehub/lobe-chat/commit/31f6d29))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version 0.96.6](https://github.com/lobehub/lobe-chat/compare/v0.96.5...v0.96.6)
+
+<sup>Released on **2023-10-30**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: Improve plausible analytics ENV.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: Improve plausible analytics ENV ([aa851d4](https://github.com/lobehub/lobe-chat/commit/aa851d4))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version 0.96.5](https://github.com/lobehub/lobe-chat/compare/v0.96.4...v0.96.5)
+
+<sup>Released on **2023-10-29**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: Fix docker image optimization error log.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: Fix docker image optimization error log ([730aec1](https://github.com/lobehub/lobe-chat/commit/730aec1))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version 0.96.4](https://github.com/lobehub/lobe-chat/compare/v0.96.3...v0.96.4)
+
+<sup>Released on **2023-10-29**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: Fix agents market locale fallback to english.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: Fix agents market locale fallback to english, closes [#382](https://github.com/lobehub/lobe-chat/issues/382) ([3814523](https://github.com/lobehub/lobe-chat/commit/3814523))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version 0.96.3](https://github.com/lobehub/lobe-chat/compare/v0.96.2...v0.96.3)
+
+<sup>Released on **2023-10-28**</sup>
+
+#### 💄 Styles
+
+- **misc**: Fix SessionList on mobile.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### Styles
+
+- **misc**: Fix SessionList on mobile ([e7e7b80](https://github.com/lobehub/lobe-chat/commit/e7e7b80))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version 0.96.2](https://github.com/lobehub/lobe-chat/compare/v0.96.1...v0.96.2)
+
+<sup>Released on **2023-10-28**</sup>
+
+#### 💄 Styles
+
+- **misc**: Fix some styles and make updates to various files.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### Styles
+
+- **misc**: Fix some styles and make updates to various files ([44a5f0a](https://github.com/lobehub/lobe-chat/commit/44a5f0a))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+### [Version 0.96.1](https://github.com/lobehub/lobe-chat/compare/v0.96.0...v0.96.1)
+
+<sup>Released on **2023-10-28**</sup>
+
+#### 💄 Styles
+
+- **misc**: Add guide to market page.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### Styles
+
+- **misc**: Add guide to market page ([8a794f9](https://github.com/lobehub/lobe-chat/commit/8a794f9))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
+## [Version 0.96.0](https://github.com/lobehub/lobe-chat/compare/v0.95.1...v0.96.0)
+
+<sup>Released on **2023-10-27**</sup>
+
+#### ✨ Features
+
+- **misc**: Improve pin mode about session group.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: Improve pin mode about session group, closes [#369](https://github.com/lobehub/lobe-chat/issues/369) ([75c5883](https://github.com/lobehub/lobe-chat/commit/75c5883))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version 0.95.1](https://github.com/lobehub/lobe-chat/compare/v0.95.0...v0.95.1)
 
 <sup>Released on **2023-10-25**</sup>
@@ -118,7 +344,7 @@
 
 #### 🐛 Bug Fixes
 
-- **misc**: Fix agent share formate.
+- **misc**: Fix agent share format.
 
 <br/>
 
@@ -127,7 +353,7 @@
 
 #### What's fixed
 
-- **misc**: Fix agent share formate ([56ebc0b](https://github.com/lobehub/lobe-chat/commit/56ebc0b))
+- **misc**: Fix agent share format ([56ebc0b](https://github.com/lobehub/lobe-chat/commit/56ebc0b))
 
 </details>
 
@@ -929,7 +1155,7 @@
 
 #### 🐛 Bug Fixes
 
-- **misc**: Fix mobile safearea (fix.
+- **misc**: Fix mobile safe area (fix.
 
 <br/>
 
@@ -938,7 +1164,7 @@
 
 #### What's fixed
 
-- **misc**: Fix mobile safearea (fix, closes [#211](https://github.com/lobehub/lobe-chat/issues/211) ([68775b8](https://github.com/lobehub/lobe-chat/commit/68775b8))
+- **misc**: Fix mobile safe area (fix, closes [#211](https://github.com/lobehub/lobe-chat/issues/211) ([68775b8](https://github.com/lobehub/lobe-chat/commit/68775b8))
 
 </details>
 
@@ -1588,7 +1814,7 @@
 
 #### 💄 Styles
 
-- **misc**: Fix conversation mobile viewarea.
+- **misc**: Fix conversation mobile view area.
 
 <br/>
 
@@ -1597,7 +1823,7 @@
 
 #### Styles
 
-- **misc**: Fix conversation mobile viewarea ([6668e11](https://github.com/lobehub/lobe-chat/commit/6668e11))
+- **misc**: Fix conversation mobile view area ([6668e11](https://github.com/lobehub/lobe-chat/commit/6668e11))
 
 </details>
 
@@ -1638,7 +1864,7 @@
 
 #### 💄 Styles
 
-- **misc**: Fix safeare in mobile.
+- **misc**: Fix safearea in mobile.
 
 <br/>
 
@@ -1647,7 +1873,7 @@
 
 #### Styles
 
-- **misc**: Fix safeare in mobile ([2adfb04](https://github.com/lobehub/lobe-chat/commit/2adfb04))
+- **misc**: Fix safearea in mobile ([2adfb04](https://github.com/lobehub/lobe-chat/commit/2adfb04))
 
 </details>
 
@@ -1688,7 +1914,7 @@
 
 #### 💄 Styles
 
-- **misc**: Optmize PWA style and scroll effect.
+- **misc**: Optimize PWA style and scroll effect.
 
 <br/>
 
@@ -1697,7 +1923,7 @@
 
 #### Styles
 
-- **misc**: Optmize PWA style and scroll effect ([0ae05b8](https://github.com/lobehub/lobe-chat/commit/0ae05b8))
+- **misc**: Optimize PWA style and scroll effect ([0ae05b8](https://github.com/lobehub/lobe-chat/commit/0ae05b8))
 
 </details>
 
@@ -2124,7 +2350,7 @@
 
 #### ✨ Features
 
-- **misc**: Add russian localy, Update Russian and English localy (LLM tab).
+- **misc**: Add russian locally, Update Russian and English locally (LLM tab).
 
 <br/>
 
@@ -2133,8 +2359,8 @@
 
 #### What's improved
 
-- **misc**: Add russian localy ([7b67c9f](https://github.com/lobehub/lobe-chat/commit/7b67c9f))
-- **misc**: Update Russian and English localy (LLM tab) ([3b23e70](https://github.com/lobehub/lobe-chat/commit/3b23e70))
+- **misc**: Add russian locally ([7b67c9f](https://github.com/lobehub/lobe-chat/commit/7b67c9f))
+- **misc**: Update Russian and English locally (LLM tab) ([3b23e70](https://github.com/lobehub/lobe-chat/commit/3b23e70))
 
 </details>
 
@@ -2493,7 +2719,7 @@
 
 #### ♻ Code Refactoring
 
-- **misc**: Mirgrate openai-edge to openai.
+- **misc**: Migrate openai-edge to openai.
 
 <br/>
 
@@ -2502,7 +2728,7 @@
 
 #### Code refactoring
 
-- **misc**: Mirgrate openai-edge to openai, closes [#145](https://github.com/lobehub/lobe-chat/issues/145) ([75ee574](https://github.com/lobehub/lobe-chat/commit/75ee574))
+- **misc**: Migrate openai-edge to openai, closes [#145](https://github.com/lobehub/lobe-chat/issues/145) ([75ee574](https://github.com/lobehub/lobe-chat/commit/75ee574))
 
 </details>
 
@@ -2637,7 +2863,7 @@
 
 #### ✨ Features
 
-- **misc**: Add russian localy.
+- **misc**: Add russian locally.
 
 <br/>
 
@@ -2646,7 +2872,7 @@
 
 #### What's improved
 
-- **misc**: Add russian localy, closes [#137](https://github.com/lobehub/lobe-chat/issues/137) ([785d50f](https://github.com/lobehub/lobe-chat/commit/785d50f))
+- **misc**: Add russian locally, closes [#137](https://github.com/lobehub/lobe-chat/issues/137) ([785d50f](https://github.com/lobehub/lobe-chat/commit/785d50f))
 
 </details>
 
