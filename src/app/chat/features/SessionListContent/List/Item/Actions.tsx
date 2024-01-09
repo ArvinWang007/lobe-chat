@@ -1,12 +1,13 @@
 import { ActionIcon, Icon } from '@lobehub/ui';
 import { App, Dropdown, type MenuProps } from 'antd';
 import { createStyles } from 'antd-style';
-import { HardDriveDownload, MoreVertical, Pin, PinOff, Trash } from 'lucide-react';
+import { HardDriveDownload, LucideCopy, MoreVertical, Pin, PinOff, Trash } from 'lucide-react';
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { exportSingleAgent, exportSingleSession } from '@/helpers/export';
+import { configService } from '@/services/config';
 import { useSessionStore } from '@/store/session';
+import { sessionHelpers } from '@/store/session/helpers';
 import { sessionSelectors } from '@/store/session/selectors';
 
 const useStyles = createStyles(({ css }) => ({
@@ -25,9 +26,14 @@ const Actions = memo<ActionProps>(({ id, setOpen }) => {
 
   const { styles } = useStyles();
 
-  const [pin, removeSession, pinSession] = useSessionStore((s) => {
+  const [pin, removeSession, pinSession, duplicateSession] = useSessionStore((s) => {
     const session = sessionSelectors.getSessionById(id)(s);
-    return [session.pinned, s.removeSession, s.pinSession];
+    return [
+      sessionHelpers.getSessionPinned(session),
+      s.removeSession,
+      s.pinSession,
+      s.duplicateSession,
+    ];
   });
 
   const { modal } = App.useApp();
@@ -48,20 +54,36 @@ const Actions = memo<ActionProps>(({ id, setOpen }) => {
             key: 'agent',
             label: <div>{t('exportType.agent')}</div>,
             onClick: () => {
-              exportSingleAgent(id);
+              configService.exportSingleAgent(id);
             },
           },
           {
             key: 'agentWithMessage',
             label: <div>{t('exportType.agentWithMessage')}</div>,
             onClick: () => {
-              exportSingleSession(id);
+              configService.exportSingleSession(id);
             },
           },
         ],
         icon: <Icon icon={HardDriveDownload} />,
         key: 'export',
         label: t('export'),
+      },
+      {
+        type: 'divider',
+      },
+      {
+        icon: <Icon icon={LucideCopy} />,
+        key: 'duplicate',
+        label: t('duplicate'),
+        onClick: ({ domEvent }) => {
+          domEvent.stopPropagation();
+
+          duplicateSession(id);
+        },
+      },
+      {
+        type: 'divider',
       },
       {
         danger: true,
@@ -72,6 +94,7 @@ const Actions = memo<ActionProps>(({ id, setOpen }) => {
           domEvent.stopPropagation();
 
           modal.confirm({
+            cancelText: t('cancel'),
             centered: true,
             okButtonProps: { danger: true },
             okText: t('ok'),

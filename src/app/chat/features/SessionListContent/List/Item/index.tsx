@@ -4,8 +4,11 @@ import { memo, useMemo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import { shallow } from 'zustand/shallow';
 
-import { settingsSelectors, useGlobalStore } from '@/store/global';
+import { useChatStore } from '@/store/chat';
+import { useGlobalStore } from '@/store/global';
+import { settingsSelectors } from '@/store/global/selectors';
 import { useSessionStore } from '@/store/session';
+import { sessionHelpers } from '@/store/session/helpers';
 import { agentSelectors, sessionSelectors } from '@/store/session/selectors';
 
 import ListItem from '../../ListItem';
@@ -19,36 +22,26 @@ const SessionItem = memo<SessionItemProps>(({ id }) => {
   const [open, setOpen] = useState(false);
 
   const [defaultModel] = useGlobalStore((s) => [settingsSelectors.defaultAgentConfig(s).model]);
+  const [active] = useSessionStore((s) => [s.activeId === id]);
+  const [loading] = useChatStore((s) => [!!s.chatLoadingId && id === s.activeId]);
 
-  const [
-    active,
-    loading,
-    pin,
-    title,
-    description,
-    systemRole,
-    avatar,
-    avatarBackground,
-    updateAt,
-    model,
-  ] = useSessionStore((s) => {
-    const session = sessionSelectors.getSessionById(id)(s);
-    const meta = session.meta;
-    const systemRole = session.config.systemRole;
+  const [pin, title, description, systemRole, avatar, avatarBackground, updateAt, model] =
+    useSessionStore((s) => {
+      const session = sessionSelectors.getSessionById(id)(s);
+      const meta = session.meta;
+      const systemRole = session.config.systemRole;
 
-    return [
-      s.activeId === id,
-      !!s.chatLoadingId && id === s.activeId,
-      session.pinned,
-      agentSelectors.getTitle(meta),
-      agentSelectors.getDescription(meta),
-      systemRole,
-      agentSelectors.getAvatar(meta),
-      meta.backgroundColor,
-      session?.updateAt,
-      session.config.model,
-    ];
-  });
+      return [
+        sessionHelpers.getSessionPinned(session),
+        agentSelectors.getTitle(meta),
+        agentSelectors.getDescription(meta),
+        systemRole,
+        agentSelectors.getAvatar(meta),
+        meta.backgroundColor,
+        session?.updatedAt,
+        session.config.model,
+      ];
+    });
 
   const showModel = model !== defaultModel;
 

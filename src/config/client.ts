@@ -1,12 +1,13 @@
+/**
+ * the client config is only used in Vercel deployment
+ */
+
 /* eslint-disable sort-keys-fix/sort-keys-fix , typescript-sort-keys/interface */
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace NodeJS {
     interface ProcessEnv {
-      AGENTS_INDEX_URL?: string;
-      PLUGINS_INDEX_URL?: string;
-
       NEXT_PUBLIC_ANALYTICS_VERCEL?: string;
       NEXT_PUBLIC_VERCEL_DEBUG?: string;
 
@@ -26,14 +27,13 @@ declare global {
       NEXT_PUBLIC_I18N_DEBUG: string;
       NEXT_PUBLIC_I18N_DEBUG_BROWSER: string;
       NEXT_PUBLIC_I18N_DEBUG_SERVER: string;
+
+      NEXT_PUBLIC_DEVELOPER_DEBUG: string;
     }
   }
 }
 
 export const getClientConfig = () => ({
-  AGENTS_INDEX_URL: process.env.AGENTS_INDEX_URL,
-  PLUGINS_INDEX_URL: process.env.PLUGINS_INDEX_URL,
-
   // Vercel Analytics
   ANALYTICS_VERCEL: process.env.NEXT_PUBLIC_ANALYTICS_VERCEL === '1',
   VERCEL_DEBUG: process.env.NEXT_PUBLIC_VERCEL_DEBUG === '1',
@@ -54,4 +54,7 @@ export const getClientConfig = () => ({
   I18N_DEBUG: process.env.NEXT_PUBLIC_I18N_DEBUG === '1',
   I18N_DEBUG_BROWSER: process.env.NEXT_PUBLIC_I18N_DEBUG_BROWSER === '1',
   I18N_DEBUG_SERVER: process.env.NEXT_PUBLIC_I18N_DEBUG_SERVER === '1',
+
+  // developer debug mode
+  DEBUG_MODE: process.env.NEXT_PUBLIC_DEVELOPER_DEBUG === '1',
 });

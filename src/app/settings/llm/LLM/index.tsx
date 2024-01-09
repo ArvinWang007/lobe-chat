@@ -7,7 +7,8 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { FORM_STYLE } from '@/const/layoutTokens';
-import { settingsSelectors, useEffectAfterGlobalHydrated, useGlobalStore } from '@/store/global';
+import { useEffectAfterGlobalHydrated, useGlobalStore } from '@/store/global';
+import { settingsSelectors } from '@/store/global/selectors';
 
 import Checker from './Checker';
 
@@ -74,7 +75,13 @@ const LLM = memo(() => {
         name: [configKey, 'openAI', 'endpoint'],
       },
       {
-        children: <Input allowClear placeholder={t('llm.OpenAI.customModelName.placeholder')} />,
+        children: (
+          <Input.TextArea
+            allowClear
+            placeholder={t('llm.OpenAI.customModelName.placeholder')}
+            style={{ height: 100 }}
+          />
+        ),
         desc: t('llm.OpenAI.customModelName.desc'),
         label: t('llm.OpenAI.customModelName.title'),
         name: [configKey, 'openAI', 'customModelName'],

@@ -3,8 +3,8 @@ import { produce } from 'immer';
 import useSWR, { SWRResponse } from 'swr';
 import type { StateCreator } from 'zustand/vanilla';
 
-import { getAgentList, getAgentManifest } from '@/services/agentMarket';
-import { getCurrentLanguage } from '@/store/global/helpers';
+import { marketService } from '@/services/market';
+import { globalHelpers } from '@/store/global/helpers';
 import { AgentsMarketItem, LobeChatAgentsMarketIndex } from '@/types/market';
 
 import type { Store } from './store';
@@ -12,6 +12,7 @@ import type { Store } from './store';
 export interface StoreAction {
   activateAgent: (identifier: string) => void;
   deactivateAgent: () => void;
+  setSearchKeywords: (keywords: string) => void;
   updateAgentMap: (key: string, value: AgentsMarketItem) => void;
   useFetchAgent: (identifier: string) => SWRResponse<AgentsMarketItem>;
   useFetchAgentList: () => SWRResponse<LobeChatAgentsMarketIndex>;
@@ -29,6 +30,9 @@ export const createMarketAction: StateCreator<
   deactivateAgent: () => {
     set({ currentIdentifier: undefined }, false, 'deactivateAgent');
   },
+  setSearchKeywords: (keywords) => {
+    set({ searchKeywords: keywords });
+  },
   updateAgentMap: (key, value) => {
     const { agentMap } = get();
 
@@ -42,8 +46,8 @@ export const createMarketAction: StateCreator<
   },
   useFetchAgent: (identifier) =>
     useSWR<AgentsMarketItem>(
-      [identifier, getCurrentLanguage()],
-      ([id, locale]) => getAgentManifest(id, locale as string),
+      [identifier, globalHelpers.getCurrentLanguage()],
+      ([id, locale]) => marketService.getAgentManifest(id, locale as string),
       {
         onError: () => {
           get().deactivateAgent();
@@ -54,9 +58,17 @@ export const createMarketAction: StateCreator<
       },
     ),
   useFetchAgentList: () =>
-    useSWR<LobeChatAgentsMarketIndex>(getCurrentLanguage(), getAgentList, {
-      onSuccess: (agentMarketIndex) => {
-        set({ agentList: agentMarketIndex.agents }, false, 'useFetchAgentList');
+    useSWR<LobeChatAgentsMarketIndex>(
+      globalHelpers.getCurrentLanguage(),
+      marketService.getAgentList,
+      {
+        onSuccess: (agentMarketIndex) => {
+          set(
+            { agentList: agentMarketIndex.agents, tagList: agentMarketIndex.tags },
+            false,
+            'useFetchAgentList',
+          );
+        },
       },
-    }),
+    ),
 });
